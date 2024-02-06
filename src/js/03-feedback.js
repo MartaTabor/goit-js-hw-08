@@ -33,6 +33,10 @@ loadFromStorage();
 
 form.addEventListener('submit', event => {
   event.preventDefault();
+  if (email.value === '' || message.value === '') {
+    alert('Please fill in all the fields!');
+  }
+  console.log(`Email: ${email.value}, Message: ${message.value}`);
   localStorage.removeItem(storageKey);
   form.reset();
 });
